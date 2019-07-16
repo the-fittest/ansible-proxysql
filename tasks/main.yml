@@ -1,0 +1,20 @@
+---
+# tasks file for ansible-proxysql
+
+- include_tasks: install.yml
+
+- name: Upload config to host
+  when: proxysql_config_file != ""
+  template:
+    src: "{{ proxysql_config_file }}"
+    dest: "/etc/proxysql.cnf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: "reload proxysql"
+
+- name: Enable service proxysql
+  service:
+    enabled: yes
+    name: proxysql
+    state: started

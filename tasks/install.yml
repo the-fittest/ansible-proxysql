@@ -1,0 +1,19 @@
+---
+
+- name: Install repository key
+  apt_key:
+    state: present
+    url: http://repo.proxysql.com/ProxySQL/repo_pub_key
+
+- name: Add Repository
+  apt_repository:
+    repo: "deb http://repo.proxysql.com/ProxySQL/proxysql-2.0.x/{{ proxysql_ubuntu_release }}/ ./"
+    state: present
+    update_cache: yes
+
+- name: Install Proxysql
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ proxysql_packages }}"

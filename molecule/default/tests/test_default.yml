@@ -1,0 +1,24 @@
+---
+
+package:
+  proxysql:
+    installed: true
+port:
+  tcp:6032:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:6033:
+    listening: true
+    ip:
+    - 0.0.0.0
+    - 0.0.0.0
+    - 0.0.0.0
+    - 0.0.0.0
+service:
+  proxysql:
+    enabled: true
+    running: true
+process:
+  proxysql:
+    running: true

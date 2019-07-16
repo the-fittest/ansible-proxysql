@@ -1,0 +1,9 @@
+---
+# defaults file for ansible-proxysql
+
+proxysql_config_file: template/proxysql.cnf
+proxysql_packages:
+  - proxysql
+
+proxysql_ubuntu_release: {{ ansible_distribution_release }}
+proxysql_ubuntu_version: proxysql_2.0.5-ubuntu18_amd64.deb

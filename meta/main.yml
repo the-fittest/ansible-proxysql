@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: The Fittest GmbH
+  description: your description
+  company: The Fittest GmbH
+  license: All rights reserved
+
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+
+  galaxy_tags: []
+
+dependencies: []
